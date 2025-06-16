@@ -11,17 +11,17 @@ This approach enhances the noise robustness of MLPs against input noise, thereby
 
 
 # Dependencies
-Python 3.9.18   
-Pytorch 1.9.0  
-torch_geometric 2.0.4  
-numpy 1.26.3  
+* Python 3.9.18   
+* Pytorch 1.9.0  
+* torch_geometric 2.0.4  
+* numpy 1.26.3  
 
 # Teacher Model
 We provide several pre-trained outputs of teacher models in the 'teacher_model' folder.  
 You can access the teacher models' implementations as follows:  
-DGI [https://github.com/pyg-team/pytorch_geometric/blob/master/examples/infomax_inductive.py]  
-GRACE [https://github.com/CRIPAC-DIG/GRACE]  
-CCA-SSG [https://github.com/hengruizhang98/CCA-SSG]  
+* DGI [https://github.com/pyg-team/pytorch_geometric/blob/master/examples/infomax_inductive.py]  
+* GRACE [https://github.com/CRIPAC-DIG/GRACE]  
+* CCA-SSG [https://github.com/hengruizhang98/CCA-SSG]  
 
 # Run
 python model/main.py --dataset=CORA --teacher=GRACE

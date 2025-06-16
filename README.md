@@ -1,8 +1,12 @@
 # DAD-SGM
-(Revision under IEEE Transactions on Artificial Intelligence)  
-We introduce a new research direction for distilling task-agnostic knowledge from self-supervised GNNs to MLPs.  
-To achieve this, we design a GNN-to-MLP distillation that employs a diffusion teacher-assistant model.  
-This approach drastically enhances the noise robustness of MLPa against input noise, thereby producing robust node representations with MLPs.  
+An implementation of the IEEE Transactions on Artificial Intelligence "Diffusion-Assisted Distillation for Self-Supervised
+Graph Representation Learning with MLPs" (Under Minor Revision).
+Thank you for your interest in our works!  
+
+# Motivation
+We find out that current GNN-to-MLP distillation methods often fail to preserve the task-agnostic knowledge learned by self-supervised GNN teachers.  
+Hence, we introduce a new research direction for distilling task-agnostic knowledge from self-supervised graph neural networks (GNNs) to multi-layer perceptrons (MLPs).  
+This approach enhances the noise robustness of MLPs against input noise, thereby producing robust node representations.  
 
 ![image](https://github.com/user-attachments/assets/62a9d532-e3ab-4bca-8a79-a8c5b59495de)
 

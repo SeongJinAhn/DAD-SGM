@@ -14,10 +14,11 @@ torch_geometric 2.0.4
 numpy 1.26.3  
 
 # Teacher Model
-We provide several pre-trained outputs of teacher models in the 'teacher_model' folder.
-DGI [https://github.com/pyg-team/pytorch_geometric/blob/master/examples/infomax_inductive.py]
-GRACE [https://github.com/CRIPAC-DIG/GRACE]
-CCA-SSG [https://github.com/hengruizhang98/CCA-SSG]
+We provide several pre-trained outputs of teacher models in the 'teacher_model' folder.  
+You can access the teacher models' implementations as follows:  
+DGI [https://github.com/pyg-team/pytorch_geometric/blob/master/examples/infomax_inductive.py]  
+GRACE [https://github.com/CRIPAC-DIG/GRACE]  
+CCA-SSG [https://github.com/hengruizhang98/CCA-SSG]  
 
 # Run
 python model/main.py

@@ -1,5 +1,5 @@
 # DAD-SGM
-An implementation of the IEEE Transactions on Artificial Intelligence "Diffusion-Assisted Distillation for Self-Supervised Graph Representation Learning with MLPs" (Under Minor Revision).  
+An implementation of the IEEE Transactions on Artificial Intelligence paper "Diffusion-Assisted Distillation for Self-Supervised Graph Representation Learning with MLPs" (Under Minor Revision).  
 Thank you for your interest in our work!  
 
 # Motivation

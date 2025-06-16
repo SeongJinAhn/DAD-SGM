@@ -1,7 +1,6 @@
 # DAD-SGM
-An implementation of the IEEE Transactions on Artificial Intelligence "Diffusion-Assisted Distillation for Self-Supervised
-Graph Representation Learning with MLPs" (Under Minor Revision).
-Thank you for your interest in our works!  
+An implementation of the IEEE Transactions on Artificial Intelligence "Diffusion-Assisted Distillation for Self-Supervised Graph Representation Learning with MLPs" (Under Minor Revision).  
+Thank you for your interest in our work!  
 
 # Motivation
 We find out that current GNN-to-MLP distillation methods often fail to preserve the task-agnostic knowledge learned by self-supervised GNN teachers.  

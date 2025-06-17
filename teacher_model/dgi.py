@@ -7,7 +7,6 @@ import torch.nn as nn
 from torch_geometric.datasets import Planetoid
 from torch_geometric.nn import DeepGraphInfomax, GCNConv
 from torch_geometric.datasets import Planetoid, Amazon, AmazonProducts, Flickr, Coauthor, CoraFull, Reddit, WikiCS, Reddit2, LINKXDataset, WikipediaNetwork, WebKB, Actor
-from heterodataset import HeterophilousGraphDataset
 from torch_geometric.utils import train_test_split_edges
 from utils import add_edge_noise, add_feature_noise, LogReg, svm_test2
 from torch_geometric.nn import GAE, VGAE, APPNP, GCN
@@ -62,11 +61,11 @@ class Encoder(torch.nn.Module):
         super().__init__()
         self.prelu1 = torch.nn.PReLU(512)
         self.prelu2 = torch.nn.PReLU(64)
-        self.conv1 = GCNConv(in_channels, 64).to('cuda:0')
+        self.conv1 = GCNConv(in_channels, 512).to('cuda:0')
         self.conv2 = GCNConv(512, 64, cached=False).to('cuda:0')
 
     def forward(self, x, edge_index):
-        x = self.conv1.to('cuda:0')(x, edge_index)
+        x = self.conv1(x, edge_index)
         x = self.prelu1(x)
         x = self.conv2(x, edge_index)
         x = self.prelu2(x)

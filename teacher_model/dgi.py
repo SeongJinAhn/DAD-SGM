@@ -92,10 +92,10 @@ def train():
     loss = model.loss(pos_z, neg_z, summary)
     loss.backward()
     optimizer.step()
-    return loss.item(), 123
+    return loss.item()
 
 for epoch in range(1, 2001):
-    loss, perturbed_image = train()
+    loss = train()
     print(f'Epoch: {epoch:03d}, Loss: {loss:.4f}')
     z, _, _ = model(data.x, data.edge_index)
 

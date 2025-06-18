@@ -130,9 +130,6 @@ class gaussian_ddpm_losses:
         for i in range(1, self.num_timesteps):
             eps = model(x, updated_h, adj, torch.tensor([self.num_timesteps-i]).to(x.device), self.num_timesteps, False)
             updated_h = (1/self.diff_Y.sqrt_alphas[self.num_timesteps-i])*(updated_h-self.diff_Y.thresh[self.num_timesteps-i]*eps)
-#            if i == self.num_timesteps:
-#                break
-#            updated_h = self.diff_Y.sqrt_alphas[self.num_timesteps-i-1]*updated_h + self.diff_Y.sqrt_betas[self.num_timesteps-i-1]*eps
         return updated_h
 
     def sample_time(self, device):

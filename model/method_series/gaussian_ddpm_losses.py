@@ -8,35 +8,6 @@ from torch.autograd import Variable
 from torch_geometric.nn import APPNP
 from torch_geometric.utils import negative_sampling
 
-########################
-def feature_kernel(X, feature_map, trans_X):
-    """ 변환 T를 적용한 후의 특징 커널을 계산합니다. """
-    transformed_features = trans_X
-    return torch.mm(transformed_features, transformed_features.t())
-
-def label_kernel(Y):
-    """ 라벨 커널을 계산합니다. """
-    return (Y.unsqueeze(1) == Y.unsqueeze(0)).float()
-
-def kernel_alignment(X, Y, feature_map, trans_X):
-    """ 커널 정렬 메트릭을 계산합니다. """
-    Kx = feature_kernel(X, feature_map, trans_X)
-    Ky = label_kernel(Y).cuda()
-    alignment = torch.sum(Kx * Ky) / torch.sqrt(torch.sum(Kx * Kx) * torch.sum(Ky * Ky))
-    return alignment
-
-# 예시 특징 맵 함수 (예: 랜덤 푸리에 특징)
-def example_feature_map(x):
-    """ 랜덤 푸리에 특징 맵 함수입니다. """
-    return torch.exp(-0.5 * (x - x.mean())**2)
-
-# 예시 변환 함수
-def example_transformation(x):
-    """ 간단한 예시 변환 함수입니다. """
-    return x + torch.randn_like(x) * 0.1  # 예: 작은 노이즈 추가
-########################
-
-
 def sum_except_batch(x, num_dims=1):
     return torch.sum(x, dim = -1)
 

@@ -98,13 +98,6 @@ class gaussian_ddpm_losses:
             del eps
         del x, adj
         return losses / batch
-        
-    def lsp(self, z1, z2, adj):
-        z1 = F.normalize(z1, p=2, dim=1)
-        z2 = F.normalize(z2, p=2, dim=1)
-        S_z1 = torch.mm(z1, z1.T)
-        S_z2 = torch.mm(z2, z2.T)
-        return (S_z1 - S_z2)[adj[0], adj[1]].mean()
 
     def sds(self, model, x, adj, y, teacher_h, label, train_mask, batch = 1):
         losses = 0

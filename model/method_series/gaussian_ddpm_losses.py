@@ -71,7 +71,7 @@ class diffusion_model(torch.nn.Module):
         self.register_buffer(name, tensor.type(torch.float32))
 
     def q_sample(self, x, t):
-        noise = torch.randn_like(x) # epsilon : noise
+        noise = torch.randn_like(x) 
         return (
             self.sqrt_alphas_cumprod[t] * x
             + self.sqrt_one_minus_alphas_cumprod[t] * noise, noise
@@ -93,7 +93,7 @@ class gaussian_ddpm_losses:
             t = self.sample_time(self.device)
             q_Y_sample, noise = self.diff_Y.q_sample(y, t)
             eps = model(x, q_Y_sample, adj, t, self.num_timesteps, train=True)
-            losses = losses + torch.mean(torch.sum((eps - noise)**2, dim = -1))    # DDIM
+            losses = losses + torch.mean(torch.sum((eps - noise)**2, dim = -1))
             del q_Y_sample
             del eps
         del x, adj

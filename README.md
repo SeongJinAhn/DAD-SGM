@@ -2,6 +2,8 @@
 An implementation of the IEEE Transactions on Artificial Intelligence paper "Diffusion-Assisted Distillation for Self-Supervised Graph Representation Learning with MLPs".  
 Thank you for your interest in our work!  
 
+If you want to compare our implementation, please cite our work (https://doi.org/10.1109/TAI.2025.3598791).
+
 # Motivation
 We find out that current GNN-to-MLP distillation methods often fail to preserve the task-agnostic knowledge learned by self-supervised GNN teachers.  
 Hence, we introduce a new research direction for distilling task-agnostic knowledge from self-supervised graph neural networks (GNNs) to multi-layer perceptrons (MLPs).  
